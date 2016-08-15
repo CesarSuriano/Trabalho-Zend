@@ -1,0 +1,19 @@
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>Categoria</b> and script/action name <b>index</b></p>
+        
+        <table border="1">
+            <tbody>
+                 <?php foreach ($this->categorias as $categoria) { ?>
+        <tr>
+            <td><?php echo $categoria['categoria']; ?></td>
+            <td><?php echo $categoria['id_categoria']; ?></td>      
+
+
+        </tr>
+            </tbody>
+        </table>
+        
+              
+    <?php } ?>
+</div>

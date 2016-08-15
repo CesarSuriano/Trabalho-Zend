@@ -1,0 +1,21 @@
+<br /><br />
+<div id="view-content">
+	<p>View script for controller <b>Prato</b> and script/action name <b>index</b></p>
+        
+            <?php foreach ($this->pratos as $prato) { ?>
+        <tr>
+            <td><?php echo $prato['id_prato']; ?></td>
+            <td><?php echo $prato['id_categoria'] ?></td>
+            </br>
+            <td><?php echo $prato['descricao']; ?></td>
+            </br>
+
+            <td><?php echo $prato['preco']; ?></td>
+            </br>
+
+    
+            </br>
+
+        </tr>
+    <?php } ?>
+</div>

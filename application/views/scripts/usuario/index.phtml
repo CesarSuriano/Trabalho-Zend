@@ -1,0 +1,31 @@
+<br /><br />
+<div id="view-content">
+    <p>View script for controller <b>Usuario</b> and script/action name <b>index</b></p>
+
+    <p><a href="<?php
+        echo $this->url(
+                array(
+            'controller' => 'guestbook',
+            'action' => 'sign'
+                ), 'default', true)
+        ?>">Sign Our Guestbook</a></p>
+
+    Guestbook Entries: <br />
+
+    <?php foreach ($this->admins as $admin) { ?>
+        <tr>
+            <td><?php echo $admin['id_usuario']; ?></td>
+            <td><?php echo $admin['funcao'] ?></td>
+            </br>
+            <td><?php echo $admin['nome']; ?></td>
+            </br>
+
+            <td><?php echo $admin['email']; ?></td>
+            </br>
+
+            <td><?php echo $admin['senha']; ?></td>
+            </br>
+
+        </tr>
+    <?php } ?>
+</div>
