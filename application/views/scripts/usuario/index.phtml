@@ -1,31 +1,36 @@
-<br /><br />
+
 <div id="view-content">
-    <p>View script for controller <b>Usuario</b> and script/action name <b>index</b></p>
+ <h1>Administradores</h1>
 
-    <p><a href="<?php
-        echo $this->url(
-                array(
-            'controller' => 'guestbook',
-            'action' => 'sign'
-                ), 'default', true)
-        ?>">Sign Our Guestbook</a></p>
+<?php $this->mensagem(); ?>
 
-    Guestbook Entries: <br />
+<p>[<a href="<?php echo $this->url(array('action' => 'create')); ?>">novo</a>]</p>
 
-    <?php foreach ($this->admins as $admin) { ?>
+<table class="table table-bordered table-hover table-striped">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Função</th>
+      <th>Nome</th>
+      <th>Email</th>
+      <th>Senha</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+      <?php foreach ($this->usuarios as $usuario) { ?>
         <tr>
-            <td><?php echo $admin['id_usuario']; ?></td>
-            <td><?php echo $admin['funcao'] ?></td>
-            </br>
-            <td><?php echo $admin['nome']; ?></td>
-            </br>
-
-            <td><?php echo $admin['email']; ?></td>
-            </br>
-
-            <td><?php echo $admin['senha']; ?></td>
-            </br>
-
+          <td><?php echo $usuario['id_usuario']; ?></td>
+          <td><?php if ($usuario['funcao'] == '2') { ?>Cozinheiro<?php } else { ?>Gerente<?php } ?></td>
+          <td><?php echo $usuario['nome']; ?></td>
+          <td><?php echo $usuario['email']; ?></td>
+          <td><?php echo $usuario['senha']; ?></td>
+          <td>
+            [<a href="<?php echo $this->url(array('action' => 'update', 'id_usuario' => $usuario['id_usuario'])); ?>">editar</a>]
+            [<a href="<?php echo $this->url(array('action' => 'delete', 'id_usuario' => $usuario['id_usuario'])); ?>">apagar</a>]
+          </td>
         </tr>
     <?php } ?>
+  </tbody>
+</table>
 </div>

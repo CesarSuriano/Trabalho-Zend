@@ -21,7 +21,12 @@
           <actionMethod actionName="index"/>
         </controllerFile>
       </controllersDirectory>
-      <formsDirectory enabled="false"/>
+      <formsDirectory>
+        <formFile formName="Usuario"/>
+        <formFile formName="Categoria"/>
+        <formFile formName="Prato"/>
+        <formFile formName="Login"/>
+      </formsDirectory>
       <layoutsDirectory>
         <layoutScriptsDirectory>
           <layoutScriptFile layoutName="layout"/>

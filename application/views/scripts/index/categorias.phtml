@@ -1,0 +1,17 @@
+<?php echo $this->headLink()->appendStylesheet('../css/bootstrap.min.css') ?>
+<h1>Categorias</h1>
+
+<ul class="list-group">
+    <?php foreach ($this->categorias as $categoria) { ?>
+
+        <li class="list-group-item">
+            <a href="<?php echo $this->url(array('action' => 'index', 'id_categoria' => $categoria['id_categoria'])); ?>"><?php echo $categoria['categoria']; ?></a>
+        </li>
+    <?php } ?>
+</ul>
+
+<!--<ul >
+  <li >
+
+  </li>
+</ul>-->

@@ -1,19 +1,31 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Categoria</b> and script/action name <b>index</b></p>
-        
-        <table border="1">
-            <tbody>
-                 <?php foreach ($this->categorias as $categoria) { ?>
+
+<div class="page-header">
+    <h1>Categorias</h1>
+</div>  
+
+
+<?php $this->mensagem(); ?>
+
+<?php if($this->podeCadastrar){ ?> <p>[<a href="<?php echo $this->url(array('action' => 'create')); ?>">novo</a>]</p><?php }?>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead>
         <tr>
-            <td><?php echo $categoria['categoria']; ?></td>
-            <td><?php echo $categoria['id_categoria']; ?></td>      
-
-
+            <th>#</th>
+            <th>Categoria</th>
+            <th></th>
         </tr>
-            </tbody>
-        </table>
-        
-              
-    <?php } ?>
-</div>
+    </thead>
+    <tbody>
+        <?php foreach ($this->categorias as $categoria) { ?>
+            <tr>
+                <td><?php echo $categoria['id_categoria']; ?></td>
+                <td><?php echo $categoria['categoria']; ?></td>
+                <td>
+                    <?php if ($this->podeEditar) { ?>[<a href="<?php echo $this->url(array('action' => 'update', 'id_categoria' => $categoria['id_categoria'])); ?>">editar</a>]<?php } ?>
+                    <?php if ($this->podeApagar) { ?>[<a href="<?php echo $this->url(array('action' => 'delete', 'id_categoria' => $categoria['id_categoria'])); ?>">apagar</a>]<?php } ?>
+                </td>
+            </tr>
+        <?php } ?>
+    </tbody>
+</table>
