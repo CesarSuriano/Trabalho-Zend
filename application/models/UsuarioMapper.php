@@ -3,9 +3,9 @@
 class Application_Model_UsuarioMapper {
 
     public function apagar($idusuario) {
-          $tab = new Application_Model_DbTable_Usuario();
-        $tab->delete("id_usuario = $idusuario");
-        //throw new Exception('O usuário não pode ser apagado do sistema');
+        $tab = new Application_Model_DbTable_Usuario();
+        //$tab->delete("id_usuario = $idusuario");
+        throw new Exception('O usuário não pode ser apagado do sistema');
     }
 
     public function atualizar(Application_Model_Vo_Usuario $usario) {

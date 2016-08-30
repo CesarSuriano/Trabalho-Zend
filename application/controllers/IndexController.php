@@ -4,9 +4,7 @@ class IndexController extends Blog_Controller_Action {
 
     public function indexAction() {
         $idcategoria = (int) $this->getParam('id_categoria', 0);
-        
-//        echo $idcategoria;
-//        exit;
+
 
         $select = $this->select();
         $selectCat = $this->selectCategoria();
@@ -80,7 +78,7 @@ class IndexController extends Blog_Controller_Action {
             'categoria',
             'id_categoria'
         ));
-        //return
+
         return $select;
     }
 

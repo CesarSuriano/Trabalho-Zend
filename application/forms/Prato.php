@@ -20,32 +20,10 @@ class Application_Form_Prato extends Zend_Form
         $categoria->setAttrib('class', 'form-group form-control');        
         $this->addElement($categoria);
         
-//        $tab = new Application_Model_DbTable_Categoria();
-//        $categorias = $tab->fetchAll()->toArray();
-//        
-//        $options = array();
-//        
-//        foreach ($categorias as $item) {
-//            $idcategoria = $item['idcategoria'];
-//            $nomecategoria = $item['categoria'];
-//            
-//            $options[$idcategoria] = $nomecategoria;
-//        }
-        
         $categoria->setMultiOptions($this->pegarCategorias());
         
         $filtro = new Zend_Filter_Null();
         $categoria->addFilter($filtro);
-        
-//        $preco = new Zend_Form_Element_Text('preco', array(
-//            'label' =>'Preço'
-//        ));
-//        //$preco->addValidator(new Zend_Validate_Regex(array('pattern' => '/^[0-9]/')));
-//        $preco->setAttrib('class', 'form-group form-control');
-//        
-//        $this->addElement($preco);
-
-        
         
         $botao = new Zend_Form_Element_Submit('botao', array(
             'label'=>'Salvar'
