@@ -8,7 +8,7 @@ class IndexController extends Blog_Controller_Action {
 
         $select = $this->select();
         $selectCat = $this->selectCategoria();
-        
+
         $select->where("p.preco > 0 ");
 
         if ($idcategoria != 0) {
@@ -23,8 +23,14 @@ class IndexController extends Blog_Controller_Action {
         $this->view->categorias = $consultaCat;
 
         $consulta = $select->query()->fetchAll();
-        $this->view->prato = $consulta;
-        $this->view->idcategoria = $idcategoria;
+
+        if ($consulta) {
+            $this->view->podeListar = true;
+            $this->view->prato = $consulta;
+            $this->view->idcategoria = $idcategoria;
+        } else {
+            echo $this->view->podeListar = false;
+        }
     }
 
     public function categoriasAction() {

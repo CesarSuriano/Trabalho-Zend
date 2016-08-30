@@ -21,7 +21,7 @@
       <?php foreach ($this->usuarios as $usuario) { ?>
         <tr>
           <td><?php echo $usuario['id_usuario']; ?></td>
-          <td><?php if ($usuario['funcao'] == '2') { ?>Cozinheiro<?php } else { ?>Gerente<?php } ?></td>
+          <td><?php if ($usuario['funcao'] == '1') { ?>Cozinheiro<?php } else { ?>Gerente<?php } ?></td>
           <td><?php echo $usuario['nome']; ?></td>
           <td><?php echo $usuario['email']; ?></td>
           <td><?php echo $usuario['senha']; ?></td>
