@@ -33,6 +33,7 @@ class IndexController extends Blog_Controller_Action {
         // $idcategoria = (int) $this->getParam('idcategoria', 0);
 
         $select = $this->selectCategoria();
+
         //$select->where("c.idcategoria = ?", $idcategoria);
 
         $categoria = $select->query()->fetchAll();
@@ -79,6 +80,7 @@ class IndexController extends Blog_Controller_Action {
             'categoria',
             'id_categoria'
         ));
+        //return
         return $select;
     }
 
