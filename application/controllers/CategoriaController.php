@@ -41,6 +41,7 @@ class CategoriaController extends Blog_Controller_Action {
         $idcategoria = (int) $this->getParam('id_categoria', 0);
 
         $tab = new Application_Model_DbTable_Categoria();
+
         $row = $tab->fetchRow('id_categoria = ' . $idcategoria);
 
         if ($row === null) {
@@ -92,5 +93,5 @@ class CategoriaController extends Blog_Controller_Action {
  
         $this->_helper->Redirector->gotoSimpleAndExit('index');
     }
-
+  
 }
